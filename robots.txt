@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://toyokawa-dance-savage.netlify.app/sitemap.xml
