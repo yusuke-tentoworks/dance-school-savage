@@ -229,8 +229,7 @@ h6 {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 80vh;
-    /* Shorter hero */
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -774,8 +773,28 @@ h6 {
         border: none;
     }
 
+    .hero {
+        height: 100dvh;
+        /* Dynamic viewport height for mobile */
+        padding-top: 0;
+        padding-bottom: 20px;
+        /* Shift content up slightly visually */
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+        width: 90%;
+        /* Ensure it fits width-wise */
+    }
+
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-sub {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     .section-title {
@@ -1144,8 +1163,8 @@ h6 {
     }
 
     .photo-card {
-        width: 100%;
-        max-width: 450px;
+        width: 90%;
+        max-width: 380px;
     }
 
     .photo-1,
