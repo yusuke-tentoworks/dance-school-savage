@@ -161,7 +161,7 @@ h6 {
 .nav-list {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.2rem;
 }
 
 .nav-link {
@@ -1178,6 +1178,67 @@ h6 {
         transform: none;
         width: auto;
         margin: 0 1rem;
+    }
+}
+
+/* Gallery Section */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+    max-width: 1000px;
+    margin: 3rem auto 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    background: #fff;
+    padding: 0.8rem;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+    border: 3px solid #000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    filter: sepia(0.2);
+    transition: all 0.5s ease;
+}
+
+/* Hover Effects */
+.gallery-item:hover {
+    transform: scale(1.05) rotate(0deg) !important;
+    z-index: 10;
+    box-shadow: 8px 8px 0 var(--color-primary);
+}
+
+.gallery-item:hover img {
+    filter: none;
+}
+
+/* Random Rotation for Scrapbook feel */
+.gallery-item:nth-child(odd) {
+    transform: rotate(2deg);
+}
+
+.gallery-item:nth-child(even) {
+    transform: rotate(-1.5deg);
+}
+
+.gallery-item:nth-child(3n) {
+    transform: rotate(1deg);
+}
+
+/* Responsive Gallery */
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 }
 
