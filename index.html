@@ -19,7 +19,7 @@
     <meta name="keywords" content="豊川, ダンススクール, キッズダンス, ヒップホップ, K-POP, 初心者歓迎, Savage">
     <link rel="canonical" href="https://dance-school-savage.netlify.app/">
     <link rel="icon" href="images/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/favicon.webp">
     <meta name="theme-color" content="#E91E63">
 
     <!-- Open Graph Protocol -->
@@ -98,8 +98,7 @@
                     <li><a href="#voice" class="nav-link">Voice</a></li>
                     <li><a href="#gallery" class="nav-link">Gallery</a></li>
                     <li><a href="#access" class="nav-link">Access</a></li>
-                    <li><a href="https://www.instagram.com/dance_school_savage/" target="_blank"
-                            class="btn btn-sm">Instagram</a></li>
+                    <li><a href="#contact" class="nav-link btn btn-sm">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -118,8 +117,8 @@
                 <p class="hero-sub">HIPHOP / GIRLS / K-POP / KIDS</p>
                 <div class="hero-cta">
                     <a href="https://www.instagram.com/dance_school_savage/" target="_blank" class="btn btn-filled">
-                        TRIAL LESSON</a>
-                    <p class="hero-note">体験レッスン受付中</p>
+                        View Instagram</a>
+                    <p class="hero-note">最新情報・動画をチェック！</p>
                 </div>
             </div>
         </section>
@@ -388,38 +387,67 @@
             </div>
         </section>
 
+        <!-- SNS Section -->
+        <section id="sns" class="section">
+            <div class="container text-center">
+                <h2 class="section-title">Follow Us</h2>
+                <div class="sns-container">
+                    <a href="https://line.me/R/ti/p/@vok8116a?oat_content=url&ts=09081530" target="_blank" class="sns-card line">
+                        <span class="sns-icon">LINE</span>
+                        <span class="sns-text">公式LINEでお問い合わせ</span>
+                    </a>
+                    <a href="https://www.instagram.com/dance_school_savage/" target="_blank" class="sns-card instagram">
+                        <span class="sns-icon">Instagram</span>
+                        <span class="sns-text">最新の活動をチェック</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="container text-center">
                 <h2 class="section-title">Contact</h2>
-                <div class="contact-wrapper">
-                    <!-- LINE -->
-                    <div class="contact-card line-card">
-                        <h3>LINE</h3>
-                        <div class="line-content">
-                            <a href="https://line.me/R/ti/p/@vok8116a?oat_content=url&ts=09081530" target="_blank"
-                                class="btn btn-line-friend">
-                                友だち追加
-                            </a>
+                
+                <div class="contact-form-container">
+                    <h3 class="contact-form-title">お問い合わせフォーム</h3>
+                    <form name="contact" method="POST" data-netlify="true" action="/thanks.html">
+                        <input type="hidden" name="form-name" value="contact" />
+                        
+                        <div class="form-group">
+                            <label for="name">氏名</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="田中 太郎" required>
                         </div>
-                    </div>
 
-                    <!-- Email -->
-                    <div class="contact-card email-card">
-                        <h3>E-MAIL</h3>
-                        <div class="email-list">
-                            <a href="mailto:savage.0927miu@gmail.com">savage.0927miu@gmail.com</a>
-                            <a href="mailto:savage.0927rina@gmail.com">savage.0927rina@gmail.com</a>
+                        <div class="form-group">
+                            <label for="email">メールアドレス</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="example@gmail.com" required>
                         </div>
-                    </div>
 
-                    <!-- Instagram -->
-                    <div class="contact-card insta-card">
-                        <h3>INSTAGRAM</h3>
-                        <a href="https://www.instagram.com/dance_school_savage/" target="_blank" class="btn btn-filled">
-                            @dance_school_savage
-                        </a>
-                    </div>
+                        <div class="form-group">
+                            <label for="inquiry-type">お問い合わせ項目</label>
+                            <select id="inquiry-type" name="inquiry-type" class="form-control" required>
+                                <option value="" disabled selected>選択してください</option>
+                                <option value="体験レッスンのお申し込み">体験レッスンのお申し込み</option>
+                                <option value="入会について">入会について</option>
+                                <option value="イベント出演の依頼">イベント出演の依頼</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">内容</label>
+                            <textarea id="message" name="message" rows="5" class="form-control" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+                        </div>
+
+                        <p class="form-note">
+                            ※送信前にご入力内容を再度ご確認ください。自動返信機能はございませんので、控えが必要な場合は送信前にこの画面をスクリーンショット等で保存してください。
+                        </p>
+
+                        <div class="form-btn-wrapper">
+                            <button type="submit" class="btn btn-filled">内容を送信する</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
