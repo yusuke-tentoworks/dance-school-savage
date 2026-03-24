@@ -412,43 +412,113 @@
 
                 <div class="contact-form-container">
                     <h3 class="contact-form-title">お問い合わせフォーム</h3>
-                    <form name="contact" method="POST" netlify action="/thanks.html">
+                    <form name="contact" method="POST" data-netlify="true" action="/thanks.html">
                         <input type="hidden" name="form-name" value="contact" />
 
                         <div class="form-group">
-                            <label for="name">氏名</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="田中 太郎" required>
+                            <label for="name">入会希望者 氏名<span class="required-badge">必須</span></label>
+                            <input type="text" id="name" name="applicant_name" class="form-control" placeholder="田中 太郎" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">メールアドレス</label>
+                            <label for="age">現在の年齢<span class="required-badge">必須</span></label>
+                            <select id="age" name="age" class="form-control" required>
+                                <option value="" disabled selected>選択してください</option>
+                                <option value="3歳">3歳</option>
+                                <option value="4歳">4歳</option>
+                                <option value="5歳">5歳</option>
+                                <option value="6歳">6歳</option>
+                                <option value="7歳">7歳</option>
+                                <option value="8歳">8歳</option>
+                                <option value="9歳">9歳</option>
+                                <option value="10歳">10歳</option>
+                                <option value="11歳">11歳</option>
+                                <option value="12歳">12歳</option>
+                                <option value="13歳">13歳</option>
+                                <option value="14歳">14歳</option>
+                                <option value="15歳">15歳</option>
+                                <option value="16歳">16歳</option>
+                                <option value="17歳">17歳</option>
+                                <option value="18歳">18歳</option>
+                                <option value="19歳">19歳</option>
+                                <option value="20歳以上">20歳以上</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="grade">現在の学年<span class="required-badge">必須</span></label>
+                            <select id="grade" name="grade" class="form-control" required>
+                                <option value="" disabled selected>選択してください</option>
+                                <option value="未就学児">未就学児</option>
+                                <option value="小学1年生">小学1年生</option>
+                                <option value="小学2年生">小学2年生</option>
+                                <option value="小学3年生">小学3年生</option>
+                                <option value="小学4年生">小学4年生</option>
+                                <option value="小学5年生">小学5年生</option>
+                                <option value="小学6年生">小学6年生</option>
+                                <option value="中学1年生">中学1年生</option>
+                                <option value="中学2年生">中学2年生</option>
+                                <option value="中学3年生">中学3年生</option>
+                                <option value="高校生以上・一般">高校生以上・一般</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guardian_name">保護者 氏名<span id="guardian-required" class="required-badge" style="display:none;">必須</span></label>
+                            <input type="text" id="guardian_name" name="guardian_name" class="form-control" placeholder="田中 一郎">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">メールアドレス<span class="required-badge">必須</span></label>
                             <input type="email" id="email" name="email" class="form-control"
                                 placeholder="example@gmail.com" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="inquiry-type">お問い合わせ項目</label>
-                            <select id="inquiry-type" name="inquiry-type" class="form-control" required>
+                            <label>お問い合わせ種別<span class="required-badge">必須</span></label>
+                            <div class="radio-group">
+                                <label class="radio-item">
+                                    <input type="radio" name="inquiry_type" value="体験申し込み" required checked> 体験申し込み
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="inquiry_type" value="入会について"> 入会について
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="inquiry_type" value="イベント出演の依頼"> イベント出演の依頼
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="inquiry_type" value="その他"> その他
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="desired_class">希望クラス<span class="required-badge">必須</span></label>
+                            <select id="desired_class" name="desired_class" class="form-control" required>
                                 <option value="" disabled selected>選択してください</option>
-                                <option value="体験レッスンのお申し込み">体験レッスンのお申し込み</option>
-                                <option value="入会について">入会について</option>
-                                <option value="イベント出演の依頼">イベント出演の依頼</option>
-                                <option value="その他">その他</option>
+                                <option value="幼児〜基礎・入門 水曜日 17:00-17:45">幼児〜基礎・入門 水曜日 17:00-17:45</option>
+                                <option value="幼児〜基礎・入門 土曜日 13:15-14:00">幼児〜基礎・入門 土曜日 13:15-14:00</option>
+                                <option value="Girl's 基礎・初級 土曜日 14:15-15:15">Girl's 基礎・初級 土曜日 14:15-15:15</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="message">内容</label>
-                            <textarea id="message" name="message" rows="5" class="form-control"
-                                placeholder="お問い合わせ内容をご記入ください" required></textarea>
+                            <label for="trial_date">体験ご希望日<span id="trial-date-required" class="required-badge">必須</span></label>
+                            <input type="date" id="trial_date" name="trial_date" class="form-control" required>
                         </div>
 
-                        <p class="form-note">
-                            ※送信前にご入力内容を再度ご確認ください。自動返信機能はございませんので、控えが必要な場合は送信前にこの画面をスクリーンショット等で保存してください。
-                        </p>
+                        <div class="form-group">
+                            <label for="message">備考・メッセージ（任意）</label>
+                            <textarea id="message" name="message" rows="5" class="form-control"
+                                placeholder="お問い合わせ内容をご記入ください"></textarea>
+                        </div>
+
+                        <div class="privacy-policy">
+                            <p>個人情報の取り扱いについて：ご入力いただいた個人情報は、お問い合わせへの回答および体験レッスンの受付・連絡のためにのみ利用し、法令に基づく場合を除き、第三者に提供することはありません。</p>
+                        </div>
 
                         <div class="form-btn-wrapper">
-                            <button type="submit" class="btn btn-filled">内容を送信する</button>
+                            <button type="submit" class="btn btn-filled">個人情報の取り扱いに同意して送信</button>
                         </div>
                     </form>
                 </div>
