@@ -110,7 +110,7 @@ h6 {
 }
 
 .btn-filled:hover {
-    background-color: transparent;
+    background-color: var(--color-accent);
     color: var(--color-primary);
 }
 
